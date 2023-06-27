@@ -5,10 +5,12 @@ import Calendar from './Calendar';
 import 'bootstrap/dist/css/bootstrap.css';
 import axios from 'axios';
 import { AiFillDelete } from 'react-icons/ai';
+import EditarEvento from './EditarEvento';
 
 const Eventos = () => {
 
     const [listEventos, setListEventos] = useState([]);
+    const [showComponent, setShowComponent] = useState(false);
 
     useEffect(() => {
 
@@ -38,6 +40,13 @@ const Eventos = () => {
             });
     };
 
+     /**********************************************************/
+     const [selectedEventId, setSelectedEventId] = useState(null);
+
+     const handleEditarEvento = (id) => {
+        setSelectedEventId(id);
+        setShowComponent(true); // Muestra el componente EditarEvento
+      };
 
     return (
         <>
@@ -65,7 +74,7 @@ const Eventos = () => {
                                         <td>{event.descripcion}</td>
                                         <td>{event.fecha}</td>
                                         <td className='acciones'>
-                                            <button className='btn-cerrar-sesion'>Editar</button>
+                                            <button className='btn-cerrar-sesion' onClick={handleEditarEvento}>Editar</button>
                                             <button className='btn_tarea_eliminada' 
                                                 onClick={() => handleEliminarEvento(event.id)}>
                                                 <AiFillDelete />
@@ -78,6 +87,7 @@ const Eventos = () => {
                     </div>
                 </div>
                 <div className='l2'>
+                {showComponent && <EditarEvento eventId={selectedEventId} />}
                     <Calendar />
                 </div>
             </div>

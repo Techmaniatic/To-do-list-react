@@ -304,18 +304,26 @@
   gap: 0px 0px;
 }
 
-.container-eventos table{
+.container-eventos table {
   margin: auto;
   width: 90%;
 }
 
-.acciones{
+.acciones {
   display: flex;
 }
 
-.subrayado{
+.subrayado {
   text-decoration: line-through;
 }
+
+.editarEvento {
+  margin: 30px;
+  border: solid 2px #AB92BF;
+  padding: 15px;
+  border-radius: 5px;
+}
+
 @media only screen and (max-width:600px) {
   .container-general {
     display: grid;
