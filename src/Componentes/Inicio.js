@@ -45,6 +45,9 @@ const Inicio = () => {
     navigate('/Eventos');
   };
 
+  const handleClick2 = () => {
+    navigate('/Contacto');
+  };
   const toggleComponent = () => {
     setShowComponent(!showComponent);
   };
@@ -67,7 +70,7 @@ const Inicio = () => {
             <ul>
               <li onClick={handleClick1}>Eventos</li>
               <li onClick={toggleComponent}>Crear proyecto</li>
-              <li>Contacto</li>
+              <li onClick={handleClick2}>Contacto</li>
             </ul>
           </nav>
           {showComponent && <FormularioNuevoProyecto />}
