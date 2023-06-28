@@ -7,6 +7,12 @@
   font-family: 'Baloo Paaji 2', cursive;
 }
 
+.form-check .form-check-input {
+  float: left;
+  margin-left: -1.5em;
+  margin-bottom: 5px;
+}
+
 .container-login {
   background-image: url('fondo1.jpg');
   background-size: cover;
@@ -160,6 +166,7 @@
   align-items: center;
   justify-content: center;
   border-radius: 10px;
+  padding: 0px;
 }
 
 .formulario-nuevo-proyecto form .btn-cerrar-sesion {
@@ -324,6 +331,24 @@
   border-radius: 5px;
 }
 
+.form-evento {
+  margin: 30px;
+}
+
+.form-evento input {
+  margin-bottom: 20px;
+}
+
+.form-evento button {
+  background-color: #7f47dd;
+  color: #FFFFFF;
+  border-radius: 5px;
+  padding: 10px;
+  border: none;
+  margin: auto;
+  display: block;
+}
+
 @media only screen and (max-width:600px) {
   .container-general {
     display: grid;
@@ -355,4 +380,47 @@
     gap: 10px;
     margin-bottom: 15px;
   }
+  .container-eventos {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 0px 0px;
+}
+}
+
+@media only screen and (max-width:768px) {
+  .container-general {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 0px 0px;
+  }
+
+  .redes {
+    flex-direction: column;
+    background-color: #AB92BF;
+    padding: 10px;
+    color: #FFFFFF;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 10px;
+  }
+
+  .container-proyectos {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 10px;
+    margin: 0px 30px 30px 30px;
+  }
+
+  .grid-colores {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 10px;
+    margin-bottom: 15px;
+  }
+  .container-eventos {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 0px 0px;
+}
 }

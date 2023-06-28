@@ -26,7 +26,7 @@ const Login = () => {
     console.log(data.message)
     setMessage(data.message);
 
-    if (data.success == true) {
+    if (data.success === true) {
         navigate('/Inicio');
     }
 

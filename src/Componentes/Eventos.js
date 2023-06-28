@@ -5,12 +5,11 @@ import Calendar from './Calendar';
 import 'bootstrap/dist/css/bootstrap.css';
 import axios from 'axios';
 import { AiFillDelete } from 'react-icons/ai';
-import EditarEvento from './EditarEvento';
+import { useNavigate} from 'react-router-dom';
 
 const Eventos = () => {
-
+    const navigate = useNavigate();
     const [listEventos, setListEventos] = useState([]);
-    const [showComponent, setShowComponent] = useState(false);
 
     useEffect(() => {
 
@@ -19,7 +18,6 @@ const Eventos = () => {
             .then((response) => {
                 const infoEvento = response.data;
                 setListEventos(infoEvento);
-                console.log(infoEvento)
             })
             .catch((error) => {
                 console.error(error);
@@ -27,7 +25,7 @@ const Eventos = () => {
 
     }, []);
 
-    const handleEliminarEvento= (id) => {
+    const handleEliminarEvento = (id) => {
         const url1 = `http://localhost/trello-tech-login/ApiEventos.php?id=${id}`;
         axios.delete(url1)
             .then((response) => {
@@ -40,13 +38,13 @@ const Eventos = () => {
             });
     };
 
-     /**********************************************************/
-     const [selectedEventId, setSelectedEventId] = useState(null);
+    /**********************************************************/
 
-     const handleEditarEvento = (id) => {
-        setSelectedEventId(id);
-        setShowComponent(true); // Muestra el componente EditarEvento
-      };
+    const [showComponent, setShowComponent] = useState(false);
+    
+    const handleShowComponent = (id) => {
+        navigate(`/Evento/${id}`);
+    };
 
     return (
         <>
@@ -74,8 +72,9 @@ const Eventos = () => {
                                         <td>{event.descripcion}</td>
                                         <td>{event.fecha}</td>
                                         <td className='acciones'>
-                                            <button className='btn-cerrar-sesion' onClick={handleEditarEvento}>Editar</button>
-                                            <button className='btn_tarea_eliminada' 
+                                            <button className='btn-cerrar-sesion'
+                                                onClick={() => handleShowComponent(event.id)}>Editar</button>
+                                            <button className='btn_tarea_eliminada'
                                                 onClick={() => handleEliminarEvento(event.id)}>
                                                 <AiFillDelete />
                                             </button>
@@ -84,10 +83,10 @@ const Eventos = () => {
                                 ))}
                             </tbody>
                         </table>
+                        
                     </div>
                 </div>
                 <div className='l2'>
-                {showComponent && <EditarEvento eventId={selectedEventId} />}
                     <Calendar />
                 </div>
             </div>
