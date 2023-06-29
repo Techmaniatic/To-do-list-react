@@ -13,7 +13,7 @@ const Eventos = () => {
 
     useEffect(() => {
 
-        const url = 'http://localhost/trello-tech-login/ApiEventos.php';
+        const url = 'https://to-do.techmaniatic.com/trello-tech-login/ApiEventos.php';
         axios.get(url)
             .then((response) => {
                 const infoEvento = response.data;
@@ -26,11 +26,11 @@ const Eventos = () => {
     }, []);
 
     const handleEliminarEvento = (id) => {
-        const url1 = `http://localhost/trello-tech-login/ApiEventos.php?id=${id}`;
+        const url1 = `https://to-do.techmaniatic.com/trello-tech-login/ApiEventos.php?id=${id}`;
         axios.delete(url1)
             .then((response) => {
                 console.log("Evento eliminada: " + response.data);
-                window.location.reload();
+                navigate(0)
             })
             .catch((error) => {
                 console.error(error);

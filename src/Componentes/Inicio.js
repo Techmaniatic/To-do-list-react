@@ -15,12 +15,12 @@ const Inicio = () => {
 
   useEffect(() => {
 
-    const url3 = 'http://localhost/trello-tech-login/ApiTareas.php';
+    const url3 = 'https://to-do.techmaniatic.com/trello-tech-login/ApiTareas.php';
     axios.get(url3)
       .then((response) => {
         const tareasProyecto = response.data;
         setListProyectos(tareasProyecto);
-        console.log(tareasProyecto);
+        console.log("Tareas: "+tareasProyecto);
       })
       .catch((error) => {
         console.error(error);

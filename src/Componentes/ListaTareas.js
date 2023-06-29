@@ -1,13 +1,14 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import { AiFillDelete } from 'react-icons/ai';
+import { useNavigate} from 'react-router-dom';
 
 const ListaTareas = ({ proyectoId }) => {
-
+    const navigate = useNavigate();
     const [listTareaProyecto, setListTareaProyecto] = useState([]);
 
     useEffect(() => {
-        const url = `http://localhost/trello-tech-login/ApiListaTareas.php`;
+        const url = `https://to-do.techmaniatic.com/trello-tech-login/ApiListaTareas.php`;
         axios
             .get(url)
             .then((response) => {
@@ -24,11 +25,11 @@ const ListaTareas = ({ proyectoId }) => {
     }, [proyectoId]);
 
     const handleEliminarTarea = (id) => {
-        const url4 = `http://localhost/trello-tech-login/ApiListaTareas.php?id=${id}`;
+        const url4 = `https://to-do.techmaniatic.com/trello-tech-login/ApiListaTareas.php?id=${id}`;
         axios.delete(url4)
             .then((response) => {
                 console.log("Tarea eliminada: " + response.data);
-                window.location.reload();
+                navigate(0)
             })
             .catch((error) => {
                 console.error(error);
@@ -38,7 +39,7 @@ const ListaTareas = ({ proyectoId }) => {
 
     const handleTareaCompletada = async (id, id_proyecto, tarea, fecha) => {
         try {
-            const response = await fetch(`http://localhost/trello-tech-login/ApiListaTareas.php?id=${id}`, {
+            const response = await fetch(`https://to-do.techmaniatic.com/trello-tech-login/ApiListaTareas.php?id=${id}`, {
                 method: 'PUT',
                 headers: {
                     'Content-Type': 'application/json'
@@ -56,7 +57,7 @@ const ListaTareas = ({ proyectoId }) => {
             console.log(data);
 
             if (data[0] === 'success') {
-                window.location.reload();
+                navigate(0)
             }
 
         } catch (error) {

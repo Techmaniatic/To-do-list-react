@@ -14,7 +14,7 @@ const EditarEvento = () => {
     const [Evento, setEvento] = useState([]);
 
     useEffect(() => {
-        const url = `http://localhost/trello-tech-login/ApiEventos.php?id=${id}`;
+        const url = `https://to-do.techmaniatic.com/trello-tech-login/ApiEventos.php?id=${id}`;
         axios.get(url)
             .then((response) => {
                 const infoEvento = response.data;
@@ -49,7 +49,7 @@ const EditarEvento = () => {
         const descripcion = event.target.elements[1].value;
 
         // Realiza la solicitud PUT para actualizar el evento en el servidor
-        const url = `http://localhost/trello-tech-login/ApiEventos.php?id=${id}`;
+        const url = `https://to-do.techmaniatic.com/trello-tech-login/ApiEventos.php?id=${id}`;
         axios
             .put(url, {
                 id: id,
@@ -60,7 +60,7 @@ const EditarEvento = () => {
             .then((response) => {
                 // Maneja la respuesta del servidor
                 console.log(response.data); 
-                window.location.reload();// Puedes mostrar una notificación de éxito o redirigir al usuario a otra página
+                navigate('/Eventos');
             })
             .catch((error) => {
                 console.error(error);

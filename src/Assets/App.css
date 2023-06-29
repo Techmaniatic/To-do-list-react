@@ -408,6 +408,9 @@
 
 @media only screen and (max-width:600px) {
 
+  .container-eventos .l1{
+    overflow-x: scroll;
+  }
   .grid-container-contactenos {
     display: grid;
     grid-template-columns: 1fr;
@@ -458,6 +461,9 @@
 }
 
 @media only screen and (max-width:768px) {
+  .container-eventos .l1{
+    overflow-x: scroll;
+  }
   .grid-container-contactenos {
     display: grid;
     grid-template-columns: 1fr;

@@ -14,7 +14,7 @@ const FormularioNuevoProyecto = () => {
         e.preventDefault();
 
         try {
-            const response = await fetch('http://localhost/trello-tech-login/ApiTareas.php', {
+            const response = await fetch('https://to-do.techmaniatic.com/trello-tech-login/ApiTareas.php', {
               method: 'POST',
               headers: {
                 'Content-Type': 'application/json'
@@ -26,7 +26,7 @@ const FormularioNuevoProyecto = () => {
         //   console.log(data)
       
           if (data[0] === 'success') {
-                window.location.reload();
+                navigate(0)
           }
       
            } catch (error) {

@@ -2,8 +2,10 @@ import React, { useState } from 'react';
 import 'bootstrap/dist/css/bootstrap.css';
 import { FcNext } from 'react-icons/fc';
 import { FcPrevious } from 'react-icons/fc';
+import { useNavigate} from 'react-router-dom';
 
 const Calendar = () => {
+  const navigate = useNavigate();
   const [selectedDate, setSelectedDate] = useState(new Date());
   const [eventTitle, setEventTitle] = useState('');
   const [eventDescription, setEventDescription] = useState('');
@@ -73,7 +75,7 @@ const Calendar = () => {
       fecha: date.toISOString() // Convertir fecha a formato ISO para almacenamiento
     };
     // Enviar evento a tu API de PHP y MySQL para almacenarlo en la base de datos
-    fetch('http://localhost/trello-tech-login/ApiEventos.php', {
+    fetch('https://to-do.techmaniatic.com/trello-tech-login/ApiEventos.php', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json'
@@ -85,7 +87,7 @@ const Calendar = () => {
         // Limpiar los campos del formulario después de agregar el evento
         setEventTitle('');
         setEventDescription('');
-        window.location.reload();
+        navigate(`/Eventos`);
         // Realizar cualquier acción adicional necesaria, como actualizar la lista de eventos en el calendario
       })
       .catch(error => {

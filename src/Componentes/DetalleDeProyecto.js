@@ -16,7 +16,7 @@ const DetalleDeProyecto = () => {
   useEffect(() => {
     setId_proyecto(id);
 
-    const url3 = `http://localhost/trello-tech-login/ApiTareas.php?id=${id}`;
+    const url3 = `https://to-do.techmaniatic.com/trello-tech-login/ApiTareas.php?id=${id}`;
     axios.get(url3)
       .then((response) => {
         const infoProyecto = response.data;
@@ -42,7 +42,7 @@ const DetalleDeProyecto = () => {
     e.preventDefault();
 
     try {
-      const response = await fetch('http://localhost/trello-tech-login/ApiListaTareas.php', {
+      const response = await fetch('https://to-do.techmaniatic.com/trello-tech-login/ApiListaTareas.php', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json'
@@ -54,7 +54,7 @@ const DetalleDeProyecto = () => {
       console.log(data);
 
       if (data[0] === 'success') {
-        window.location.reload();
+        navigate(0)
       }
 
     } catch (error) {

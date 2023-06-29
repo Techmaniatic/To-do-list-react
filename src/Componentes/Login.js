@@ -14,7 +14,7 @@ const Login = () => {
     e.preventDefault();
   
     try {
-      const response = await fetch('http://localhost/trello-tech-login/login.php', {
+      const response = await fetch('https://to-do.techmaniatic.com/trello-tech-login/login.php', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json'
