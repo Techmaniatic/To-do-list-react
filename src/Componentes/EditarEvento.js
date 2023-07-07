@@ -1,10 +1,10 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
-import Calendar from './Calendar';
 import { BiLogOut } from 'react-icons/bi';
 import { useNavigate, useParams } from 'react-router-dom';
 import Footer from './Footer';
 import 'bootstrap/dist/css/bootstrap.css';
+import Calendario2 from './Calendario2';
 
 const EditarEvento = () => {
 
@@ -88,7 +88,7 @@ const EditarEvento = () => {
                     </form>
                 </div>
                 <div className='l2'>
-                    <Calendar />
+                    <Calendario2  />
                 </div>
             </div>
             <Footer />

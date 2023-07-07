@@ -4,7 +4,7 @@ import { useNavigate, Link } from 'react-router-dom';
 import FormularioNuevoProyecto from './FormularioNuevoProyecto';
 import axios from 'axios';
 import { BiLogOut } from 'react-icons/bi';
-import Calendar from './Calendar';
+import Calendario2 from './Calendario2';
 
 
 const Inicio = () => {
@@ -63,7 +63,8 @@ const Inicio = () => {
       </div>
       <div className='container-general'>
         <div className='lado1'>
-          <Calendar />
+          {/* <Calendar /> */}
+          <Calendario2/>
         </div>
         <div className='lado2'>
           <nav className='menu'>

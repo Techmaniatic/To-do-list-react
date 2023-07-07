@@ -5,7 +5,7 @@ import Redes from './Redes';
 import axios from 'axios';
 import { useParams } from 'react-router-dom';
 import ListaTareas from './ListaTareas';
-import Calendar from './Calendar';
+import Calendario2 from './Calendario2';
 
 const DetalleDeProyecto = () => {
   const { id } = useParams();
@@ -73,7 +73,7 @@ const DetalleDeProyecto = () => {
           <Link to={'/Eventos'} className='link-eventos'>
             Ver Eventos
           </Link>
-          <Calendar />
+          <Calendario2/>
         </div>
         <div className='lado2'>
           <p className='titulo-proyecto'>Lista de Tareas</p>

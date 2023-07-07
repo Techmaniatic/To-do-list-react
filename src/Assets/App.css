@@ -34,6 +34,7 @@
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 0px 0px;
+  margin-bottom: 30px;
 }
 
 .titulo1 {
@@ -92,7 +93,7 @@
 }
 
 .btn-cerrar-sesion {
-  padding: 10px;
+  padding: 5px;
   border-radius: 5px;
   border: none;
   background-color: #7f47dd;
@@ -100,7 +101,7 @@
 }
 
 .btn_tarea_eliminada {
-  padding: 10px;
+  padding: 5px;
   border-radius: 5px;
   border: none;
   background-color: #BF4342;
@@ -108,6 +109,7 @@
   margin: 0px 10px;
 
 }
+
 
 .footer {
   background-color: #646363;
@@ -309,6 +311,7 @@
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 0px 0px;
+  margin-bottom: 30px;
 }
 
 .container-eventos table {
@@ -322,6 +325,7 @@
 
 .subrayado {
   text-decoration: line-through;
+  color: #63A375;
 }
 
 .editarEvento {
@@ -402,6 +406,63 @@
 
 .menu-tech {
   list-style: none;
+}
+/****************************************************************************************/
+
+.btn-next-prev {
+  background-color: #BBACC1;
+  padding: 10px;
+  border: none;
+  border-radius: 5px;
+  font-weight: bold;
+}
+
+.btn-next-prev .icon polygon {
+  fill: #ffffff;
+}
+
+td{
+  height: 80px;
+  border: solid 1px #b5b5b5 !important;
+}
+
+th{
+  padding: 5px;
+  border: solid 1px #b5b5b5 !important;
+}
+
+td p{
+ height: 100%;
+ width: 100%;
+ display: flex;
+ justify-content: center;
+ align-items: center;
+}
+.current-day {
+  background-color: #BBACC1;
+  /* Otros estilos de resaltado */
+}
+
+.Table-calendario {
+  width: 90%;
+  margin: auto;
+}
+
+.bloque1 {
+  width: 90%;
+  margin: auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  margin: 30px;
+}
+
+.titulo2 {
+  text-align: center;
+  font-weight: bold;
+  font-size: 20px;
+  color: #80727B;
+  margin-bottom: 0px;
 }
 
 /***********************************Estilos responsive***********************************/
