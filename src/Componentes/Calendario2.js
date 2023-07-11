@@ -67,7 +67,7 @@ const Calendario2 = () => {
         <button className='btn-next-prev' onClick={MesAnterior}>
           <FcPrevious className='icon' />
         </button>
-        <p className='titulo2'>Mes: {monthNames[selectedMonth]} Año: {selectedYear}</p>
+        <p className='titulo02'>Mes: {monthNames[selectedMonth]} Año: {selectedYear}</p>
         <button className='btn-next-prev' onClick={MesSiguiente}>
           <FcNext className='icon' />
         </button>
